@@ -2,12 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./css/Formulaire.css";
 
-const handleChange = (event) => {
-  const updatedNoms = [...noms];
-  updatedNoms[event.target.index] = event.target.value;
-  setNoms(updatedNoms);
-};
-
 class Formulaire extends React.Component {
   constructor(props) {
     super(props);
@@ -50,16 +44,22 @@ class Formulaire extends React.Component {
       // Afficher le formulaire uniquement si isFormVisible est true
       this.state.isFormVisible && (
         <div className="formulaire">
-          <form onSubmit={handleSubmit}>
-            {noms.map((nom, index) => (
-              <input
-                key={index}
-                name="nom"
-                value={nom}
-                onChange={(event) => handleChange(event, index)}
-              />
-            ))}
-            <button type="submit">Envoyer</button>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="participantNameInput">
+              Prénom des participants:
+            </label>
+            <br />
+            <input
+              className="input"
+              type="text"
+              id="participantNameInput"
+              value={this.state.participantName}
+              onChange={this.handleInputChange}
+            />
+            <br />
+            <button className="btn_valider" type="submit">
+              Valider
+            </button>
           </form>
         </div>
       )
