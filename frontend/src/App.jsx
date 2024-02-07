@@ -223,7 +223,7 @@ class App extends React.Component {
         </section>
 
         <Formulaire onSubmit={this.handleParticipantAddition} />
-        <ol className="name_participant">
+        <ul className="name_participant">
           {participants.map((participant, index) => (
             <li
               key={index}
@@ -232,7 +232,7 @@ class App extends React.Component {
               {participant}
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
     );
   }
