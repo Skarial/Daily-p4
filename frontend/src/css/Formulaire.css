@@ -6,6 +6,7 @@
 }
 
 .name_participant {
+  margin-left: 15px;
   grid-column: 2/3;
   grid-row: 2/6;
   color: #ffa700;
@@ -41,12 +42,21 @@
 }
 
 li {
+  text-align: left;
+  color: green;
   font-size: 10px;
-  margin-left: 50px;
 }
 
-/* @media screen and (min-width: 901px) {
+li::marker {
+  -webkit-text-stroke: 0.1px black;
+  color: yellow;
+}
+
+s {
+  color: red;
+}
+@media screen and (min-width: 350px) {
   .formulaire {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  } */
+    font-size: 1px;
+  }
+}
